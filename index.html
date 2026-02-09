@@ -23,7 +23,44 @@
   --accent2:#38bdf8;
 }
 *{margin:0;padding:0;box-sizing:border-box;font-family:'Inter',sans-serif}
-body{background:radial-gradient(60% 40% at 50% 0%,#0b1224 0%,#020617 60%);color:var(--text);line-height:1.7}
+body{background:#020617;color:var(--text);line-height:1.7;position:relative;overflow-x:hidden}
+
+/* VIDEO BACKGROUND */
+.bg-video{
+  position:fixed;
+  top:0;left:0;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  z-index:-3;
+  opacity:0.35;
+}
+
+
+/* NETWORK BACKGROUND — MATCHED TO REFERENCE IMAGE */
+body::before{
+  content:"";
+  position:fixed;
+  inset:0;
+  background:
+    radial-gradient(circle at 10% 20%, rgba(56,189,248,.25) 0 2px, transparent 3px),
+    radial-gradient(circle at 30% 40%, rgba(56,189,248,.22) 0 2px, transparent 3px),
+    radial-gradient(circle at 60% 30%, rgba(56,189,248,.25) 0 2px, transparent 3px),
+    radial-gradient(circle at 80% 60%, rgba(56,189,248,.22) 0 2px, transparent 3px),
+    linear-gradient(120deg, rgba(56,189,248,.15) 1px, transparent 1px),
+    linear-gradient(240deg, rgba(56,189,248,.15) 1px, transparent 1px);
+  background-size: 100% 100%, 100% 100%, 100% 100%, 100% 100%, 120px 120px, 140px 140px;
+  background-position: center;
+  opacity:0.45;
+  z-index:-2;
+}
+body::after{
+  content:"";
+  position:fixed;
+  inset:0;
+  background:radial-gradient(70% 50% at 50% 0%, rgba(2,6,23,.6), rgba(2,6,23,.92));
+  z-index:-1;
+}
 a{color:var(--accent);text-decoration:none}
 section{padding:90px 10%}
 h2{font-size:2.3rem;margin-bottom:34px;text-align:center}
@@ -54,6 +91,19 @@ h2{font-size:2.3rem;margin-bottom:34px;text-align:center}
 .card{background:linear-gradient(180deg,rgba(11,18,36,.9),rgba(11,18,36,.7));padding:26px;border-radius:18px;border:1px solid rgba(34,245,165,.18);transition:transform .3s,box-shadow .3s}
 .card:hover{transform:translateY(-8px);box-shadow:0 30px 60px rgba(34,245,165,.18)}
 
+/* PROJECT TITLES – MORE PROMINENT */
+.project-title{
+  font-size:1.35rem;
+  font-weight:800;
+  letter-spacing:0.2px;
+  margin-bottom:10px;
+  color:#ffffff;
+}
+.project-title span{
+  font-size:0.9rem;
+  font-weight:600;
+}
+
 /* FORM */
 input,textarea{background:rgba(2,6,23,.85);color:var(--text);border:1px solid rgba(34,245,165,.25);border-radius:14px;padding:14px;font-size:1rem;width:100%}
 input:focus,textarea:focus{outline:none;border-color:var(--accent);box-shadow:0 0 0 3px rgba(34,245,165,.25)}
@@ -76,6 +126,11 @@ footer{text-align:center;padding:44px;color:var(--muted);background:#020617;bord
 </style>
 </head>
 <body>
+
+<!-- VIDEO BACKGROUND -->
+<video autoplay muted loop playsinline class="bg-video">
+  <source src="port.mp4" type="video/mp4" />
+</video>
 
 <!-- HERO -->
 <section class="hero">
@@ -118,24 +173,51 @@ footer{text-align:center;padding:44px;color:var(--muted);background:#020617;bord
   <div class="grid">
 
     <div class="card">
-      <div class="project-title">🧮 Matrix Calculator Desktop App</div>
-      <p>NumPy‑based macOS application built using Tkinter and packaged with PyInstaller.</p>
-      <a href="https://github.com/ShivjotChoudhary/matrix-calculator-app" target="_blank">View on GitHub →</a>
+      <div class="project-title">🧮 Matrix Calculator Desktop App (NumPy | macOS) ⭐</div>
+      <p>A NumPy‑based matrix calculator packaged as a native macOS <code>.app</code> using Tkinter + PyInstaller, without Swift or native frameworks.</p>
+      <a href="https://github.com/ShivjotChoudhary/matrix-calculator-app" target="_blank">GitHub →</a>
+    </div>
+
+    <div class="card">
+      <div class="project-title">🧮 Matrix Calculator using NumPy</div>
+      <p>Interactive Python project for linear algebra operations (addition, multiplication, transpose, determinant, inverse) using NumPy with enhanced terminal UI.</p>
+      <a href="https://github.com/ShivjotChoudhary" target="_blank">View on GitHub →</a>
     </div>
 
     <div class="card">
       <div class="project-title">🤖 AI Number Guessing Game</div>
-      <p>Python CLI game using logic, randomness, and feedback‑based decision making.</p>
+      <p>Python CLI project using logic, randomization, and feedback‑based decision making.</p>
+      <a href="https://github.com/ShivjotChoudhary/-AI-Number-Guessing-Game" target="_blank">GitHub →</a>
+    </div>
+
+    <div class="card">
+      <div class="project-title">🖥️ Terminal Commands Cheat Sheet (Beginner → Advanced)</div>
+      <p>A practical, beginner‑to‑advanced cheat sheet of terminal / CLI commands with explanations and real‑world examples for daily practice.</p>
+      <a href="https://github.com/ShivjotChoudhary/Terminal-commands-cheat-sheet" target="_blank">GitHub →</a>
     </div>
 
     <div class="card">
       <div class="project-title">🌡 Weather Monitoring System</div>
-      <p>Arduino‑based IoT project using DHT & BMP sensors for real‑time data.</p>
+      <p>Arduino‑based IoT project using DHT & BMP sensors for real‑time environmental data monitoring.</p>
+      <a href="https://github.com/ShivjotChoudhary" target="_blank">View on GitHub →</a>
     </div>
 
     <div class="card">
       <div class="project-title">🧠 Machine Learning Mini Projects</div>
-      <p>Hands‑on practice projects for ML fundamentals and data processing.</p>
+      <p>Practice ML models focused on data preprocessing, training, and evaluation to build strong ML fundamentals.</p>
+      <a href="https://github.com/ShivjotChoudhary" target="_blank">View on GitHub →</a>
+    </div>
+
+    <div class="card">
+      <div class="project-title">📚 Library Management System <span style="color:var(--accent)">(In Progress)</span></div>
+      <p>Full‑stack application for managing books, users, and issue/return records. <br><strong>Open for contributions.</strong></p>
+      <a href="https://github.com/ShivjotChoudhary/Library-Management-System" target="_blank">Contribute on GitHub →</a>
+    </div>
+
+    <div class="card">
+      <div class="project-title">🔍 Cloud AI Data Processing Pipeline <span style="color:var(--accent)">(In Progress)</span></div>
+      <p>OCR‑based data processing pipeline using Google Cloud services. <br><strong>Open for contributions.</strong></p>
+      <a href="https://github.com/ShivjotChoudhary/Cloud-AI-Data-Processing-Pipeline" target="_blank">Contribute on GitHub →</a>
     </div>
 
   </div>
