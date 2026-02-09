@@ -26,6 +26,7 @@
 body{background:#020617;color:var(--text);line-height:1.7;position:relative;overflow-x:hidden}
 
 /* VIDEO BACKGROUND */
+/* VIDEO BACKGROUND */
 .bg-video{
   position:fixed;
   top:0;left:0;
@@ -33,32 +34,17 @@ body{background:#020617;color:var(--text);line-height:1.7;position:relative;over
   height:100%;
   object-fit:cover;
   z-index:-3;
-  opacity:0.35;
+  opacity:0.72; /* clearly visible but still elegant */
+  pointer-events:none;
 }
 
 
-/* NETWORK BACKGROUND — MATCHED TO REFERENCE IMAGE */
-body::before{
-  content:"";
-  position:fixed;
-  inset:0;
-  background:
-    radial-gradient(circle at 10% 20%, rgba(56,189,248,.25) 0 2px, transparent 3px),
-    radial-gradient(circle at 30% 40%, rgba(56,189,248,.22) 0 2px, transparent 3px),
-    radial-gradient(circle at 60% 30%, rgba(56,189,248,.25) 0 2px, transparent 3px),
-    radial-gradient(circle at 80% 60%, rgba(56,189,248,.22) 0 2px, transparent 3px),
-    linear-gradient(120deg, rgba(56,189,248,.15) 1px, transparent 1px),
-    linear-gradient(240deg, rgba(56,189,248,.15) 1px, transparent 1px);
-  background-size: 100% 100%, 100% 100%, 100% 100%, 100% 100%, 120px 120px, 140px 140px;
-  background-position: center;
-  opacity:0.45;
-  z-index:-2;
-}
+/* SOFT OVERLAY ONLY (video stays visible) */
 body::after{
   content:"";
   position:fixed;
   inset:0;
-  background:radial-gradient(70% 50% at 50% 0%, rgba(2,6,23,.6), rgba(2,6,23,.92));
+  background:rgba(2,6,23,0.45);
   z-index:-1;
 }
 a{color:var(--accent);text-decoration:none}
@@ -129,7 +115,7 @@ footer{text-align:center;padding:44px;color:var(--muted);background:#020617;bord
 
 <!-- VIDEO BACKGROUND -->
 <video autoplay muted loop playsinline class="bg-video">
-  <source src="port.mp4" type="video/mp4" />
+  <source src="bidio.mp4" type="video/mp4" />
 </video>
 
 <!-- HERO -->
