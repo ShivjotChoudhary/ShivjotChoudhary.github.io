@@ -3,82 +3,202 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Shivjot Choudhary | Software Developer</title>
-  <meta name="description" content="Portfolio of Shivjot Choudhary – Software Developer, Java & Web Developer." />
+  <title>Shivjot Choudhary | AI/ML & Software Developer</title>
+
+  <!-- SEO -->
+  <meta name="description" content="Shivjot Choudhary – B.Tech Engineering Student, Aspiring AI/ML Engineer, Software Developer." />
+  <meta name="author" content="Shivjot Choudhary" />
+
+  <!-- Fonts & Icons -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
   <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; font-family: Arial, sans-serif; }
-    body { background:#0f172a; color:#e5e7eb; line-height:1.6; }
-    a { color:#38bdf8; text-decoration:none; }
-    section { padding:80px 10%; }
-    .hero { min-height:100vh; display:flex; flex-direction:column; justify-content:center; }
-    .hero h1 { font-size:3rem; }
-    .hero p { margin-top:10px; font-size:1.2rem; max-width:600px; }
-    .btn { display:inline-block; margin-top:20px; padding:10px 20px; border:1px solid #38bdf8; border-radius:6px; }
-    h2 { font-size:2rem; margin-bottom:20px; }
-    .grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:20px; }
-    .card { background:#020617; padding:20px; border-radius:10px; }
-    footer { text-align:center; padding:30px; background:#020617; }
-  </style>
+:root{
+  --bg:#020617;
+  --panel:#020617ee;
+  --card:#0b1224cc;
+  --text:#e5e7eb;
+  --muted:#9ca3af;
+  --accent:#22f5a5; /* neon green */
+  --accent2:#38bdf8;
+}
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Inter',sans-serif}
+body{background:radial-gradient(60% 40% at 50% 0%,#0b1224 0%,#020617 60%);color:var(--text);line-height:1.7}
+a{color:var(--accent);text-decoration:none}
+section{padding:90px 10%}
+h2{font-size:2.3rem;margin-bottom:34px;text-align:center}
+
+/* NAV */
+.nav{position:fixed;top:0;left:0;right:0;z-index:50;background:linear-gradient(to bottom,rgba(2,6,23,.85),rgba(2,6,23,.55));backdrop-filter:blur(10px);border-bottom:1px solid rgba(34,245,165,.15)}
+.nav .wrap{max-width:1200px;margin:auto;display:flex;align-items:center;justify-content:space-between;padding:16px 10%}
+.brand{font-weight:800;letter-spacing:.3px}
+.brand span{color:var(--accent)}
+.nav a{margin-left:18px;color:var(--muted)}
+.nav a:hover{color:var(--accent)}
+
+/* HERO */
+.hero{min-height:100vh;display:grid;place-items:center;text-align:center;animation:fadeIn 1.2s ease-in}
+.profile-pic{width:170px;height:170px;object-fit:cover;border-radius:50%;border:3px solid var(--accent);margin-bottom:18px;box-shadow:0 0 0 6px rgba(34,245,165,.08),0 0 40px rgba(34,245,165,.35);animation:float 5s ease-in-out infinite}
+.hero h1{font-size:3.4rem;font-weight:800}
+.hero h1 span{color:var(--accent)}
+.wave{display:inline-block;animation:wave 2.5s infinite;transform-origin:70% 70%}
+.hero h1 span{color:var(--accent)}
+.typing{margin-top:14px;font-size:1.2rem;color:var(--muted);min-height:30px}
+
+.btn{margin-top:34px;padding:14px 34px;border-radius:999px;background:linear-gradient(135deg,var(--accent),#2dd4bf);color:#052e1f;font-weight:700;box-shadow:0 10px 30px rgba(34,245,165,.25);transition:transform .25s,box-shadow .25s}
+.btn:hover{transform:translateY(-3px);box-shadow:0 16px 40px rgba(34,245,165,.35)}
+.send-btn{margin-top:10px;padding:10px 22px;font-size:.95rem;align-self:flex-start}
+
+/* GRID & CARDS */
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:26px}
+.card{background:linear-gradient(180deg,rgba(11,18,36,.9),rgba(11,18,36,.7));padding:26px;border-radius:18px;border:1px solid rgba(34,245,165,.18);transition:transform .3s,box-shadow .3s}
+.card:hover{transform:translateY(-8px);box-shadow:0 30px 60px rgba(34,245,165,.18)}
+
+/* FORM */
+input,textarea{background:rgba(2,6,23,.85);color:var(--text);border:1px solid rgba(34,245,165,.25);border-radius:14px;padding:14px;font-size:1rem;width:100%}
+input:focus,textarea:focus{outline:none;border-color:var(--accent);box-shadow:0 0 0 3px rgba(34,245,165,.25)}
+textarea{resize:none}
+
+/* FOOTER */
+footer{text-align:center;padding:44px;color:var(--muted);background:#020617;border-top:1px solid rgba(34,245,165,.15)}
+
+@keyframes fadeIn{from{opacity:0}to{opacity:1}}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-12px)}}
+@keyframes wave{
+  0%{transform:rotate(0deg)}
+  10%{transform:rotate(14deg)}
+  20%{transform:rotate(-8deg)}
+  30%{transform:rotate(14deg)}
+  40%{transform:rotate(-4deg)}
+  50%{transform:rotate(10deg)}
+  60%,100%{transform:rotate(0deg)}
+}
+</style>
 </head>
 <body>
 
-  <!-- Hero -->
-  <section class="hero">
-    <h1>Hi, I'm Shivjot Choudhary 👋</h1>
-    <p>Software Developer | Java & DSA | Web Development | Exploring AI & Data</p>
-    <a class="btn" href="#projects">View Projects</a>
-  </section>
+<!-- HERO -->
+<section class="hero">
+  <img src="pic.jpeg" alt="Shivjot Choudhary" class="profile-pic" />
+  <h1>Hi <span class="wave">👋</span>, I'm <span>Shivjot Choudhary</span></h1>
+  <div class="typing" id="typing"></div>
+  <div style="margin-top:20px; display:flex; gap:20px;">
+    <a href="https://github.com/ShivjotChoudhary" target="_blank">GitHub</a>
+    <a href="https://www.linkedin.com/in/shivjot007/" target="_blank">LinkedIn</a>
+  </div>
+  <a class="btn" href="#projects">Explore My Work</a>
+</section>
 
-  <!-- About -->
-  <section id="about">
-    <h2>About Me</h2>
+<!-- ABOUT -->
+<section id="about">
+  <h2>About Me</h2>
+  <div class="about">
     <p>
-      I'm a B.Tech student (6th Semester) with strong skills in Java, Data Structures,
-      and Full-Stack Web Development. I enjoy building practical projects and
-      continuously improving my problem-solving skills.
+      I'm a <strong>B.Tech Engineering student</strong> passionate about <strong>Artificial Intelligence, Machine Learning</strong>,
+      and <strong>Software Development</strong>. I love turning ideas into real‑world projects and continuously
+      improving my skills in problem‑solving, system design, and data‑driven thinking.
     </p>
-  </section>
+  </div>
+</section>
 
-  <!-- Skills -->
-  <section id="skills">
-    <h2>Skills</h2>
-    <div class="grid">
-      <div class="card">Java & DSA</div>
-      <div class="card">HTML, CSS, JavaScript</div>
-      <div class="card">Frontend & Backend Web Dev</div>
-      <div class="card">Git & GitHub</div>
-      <div class="card">Arduino & Microcontrollers</div>
+<!-- SKILLS -->
+<section id="skills">
+  <h2>Tech Stack</h2>
+  <div class="grid skills">
+    <div class="card">🤖 AI / ML<br><br><img src="https://skillicons.dev/icons?i=python,sklearn,numpy,pandas,jupyter" /></div>
+    <div class="card">🌐 Web Development<br><br><img src="https://skillicons.dev/icons?i=html,css,js" /></div>
+    <div class="card">🔧 Tools<br><br><img src="https://skillicons.dev/icons?i=git,github,vscode" /></div>
+    <div class="card">⚙ Embedded / IoT<br><br><img src="https://skillicons.dev/icons?i=arduino" /></div>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects">
+  <h2>Projects</h2>
+  <div class="grid">
+
+    <div class="card">
+      <div class="project-title">🧮 Matrix Calculator Desktop App</div>
+      <p>NumPy‑based macOS application built using Tkinter and packaged with PyInstaller.</p>
+      <a href="https://github.com/ShivjotChoudhary/matrix-calculator-app" target="_blank">View on GitHub →</a>
     </div>
-  </section>
 
-  <!-- Projects -->
-  <section id="projects">
-    <h2>Projects</h2>
-    <div class="grid">
-      <div class="card">
-        <h3>AI Number Guessing Game</h3>
-        <p>CLI-based Python game using feedback-based decision making.</p>
-        <a href="https://github.com/ShivjotChoudhary" target="_blank">View on GitHub</a>
-      </div>
-      <div class="card">
-        <h3>Terminal Commands Cheat Sheet</h3>
-        <p>A beginner-to-advanced command line reference.</p>
-        <a href="https://github.com/ShivjotChoudhary/Terminal-commands-cheat-sheet" target="_blank">View Project</a>
-      </div>
+    <div class="card">
+      <div class="project-title">🤖 AI Number Guessing Game</div>
+      <p>Python CLI game using logic, randomness, and feedback‑based decision making.</p>
     </div>
-  </section>
 
-  <!-- Contact -->
-  <section id="contact">
-    <h2>Contact</h2>
-    <p>Email: shivjotchaudhary0@gmail.com</p>
-    <p>GitHub: <a href="https://github.com/ShivjotChoudhary" target="_blank">github.com/ShivjotChoudhary</a></p>
-    <p>LinkedIn: <a href="#">Add your LinkedIn</a></p>
-  </section>
+    <div class="card">
+      <div class="project-title">🌡 Weather Monitoring System</div>
+      <p>Arduino‑based IoT project using DHT & BMP sensors for real‑time data.</p>
+    </div>
 
-  <footer>
-    <p>© 2026 Shivjot Choudhary. Built with ❤️</p>
-  </footer>
+    <div class="card">
+      <div class="project-title">🧠 Machine Learning Mini Projects</div>
+      <p>Hands‑on practice projects for ML fundamentals and data processing.</p>
+    </div>
+
+  </div>
+</section>
+
+<!-- LEARNING -->
+<section id="learning">
+  <h2>Currently Learning</h2>
+  <div class="grid">
+    <div class="card">Machine Learning Fundamentals</div>
+    <div class="card">Data Structures & Algorithms</div>
+    <div class="card">Backend Development</div>
+    <div class="card">Cloud & Model Deployment Basics</div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<section id="contact">
+  <h2>Contact Me</h2>
+  <form action="https://formspree.io/f/xbjnzqkp" method="POST" class="grid">
+    <input type="text" name="name" placeholder="Your Name" required class="card" />
+    <input type="email" name="email" placeholder="Your Email" required class="card" />
+    <textarea name="message" placeholder="Your Message" rows="5" required class="card"></textarea>
+    <button type="submit" class="btn send-btn">Send Message</button>
+  </form>
+</section>
+
+<footer>
+  <p>👁 Visitors: <img src="https://hitcounter.dev/api/hit?url=https://shivjotchoudhary.github.io" /></p>
+  <p>© 2026 Shivjot Choudhary • Built with passion & ☕</p>
+</footer>
+
+<script>
+  const text = [
+    "B.Tech Engineering Student",
+    "Aspiring AI / ML Engineer",
+    "Building Real-World Projects",
+    "Python • Machine Learning • IoT"
+  ];
+  let i = 0, j = 0;
+  const typingDiv = document.getElementById('typing');
+
+  function type() {
+    if (j < text[i].length) {
+      typingDiv.textContent += text[i].charAt(j++);
+      setTimeout(type, 80);
+    } else {
+      setTimeout(erase, 1500);
+    }
+  }
+
+  function erase() {
+    if (j > 0) {
+      typingDiv.textContent = text[i].substring(0, --j);
+      setTimeout(erase, 50);
+    } else {
+      i = (i + 1) % text.length;
+      setTimeout(type, 300);
+    }
+  }
+
+  type();
+</script>
 
 </body>
 </html>
